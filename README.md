@@ -10,7 +10,9 @@ If you get stuck or have any questions please use the contact form on my website
 
 ## Getting Started
 
-First, copy the `.env.template` file and rename it to `.env.local`
+First, fork this repo and pull it down to your local system.
+
+Next, copy the `.env.template` file and rename it to `.env.local`
 
 Add your specific environment variables from Contentful and Sendgrid. You can sign up to those services here:
 
