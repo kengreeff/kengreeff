@@ -1,6 +1,7 @@
 import {
   Flex,
   Heading,
+  Link,
   Table,
   Td,
   Tr,
@@ -8,8 +9,12 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
+import NextImage from 'next/image'
 
 import DefaultLayout from '@/layout/DefaultLayout'
+
+import KickstartLogo from 'public/kickstart-logo.png'
+console.log(KickstartLogo)
 
 type HealthPageProps = {
   children: React.ReactNode,
@@ -28,6 +33,33 @@ const HealthPage = (props: HealthPageProps) => {
       <Heading as="h1">Health & Fitness</Heading>
 
       <Flex direction="column" lineHeight="1.5" marginTop="8" width={['100%', '70%']}>
+        <Flex
+          alignItems="center"
+          backgroundColor="black"
+          borderRadius="5px"
+          border="1px solid"
+          borderColor="gray.200"
+          color="white"
+          marginBottom="8"
+          padding="4"
+        >
+          <NextImage alt="8 Weeks, 8 Habits" width={160} height={100} src={KickstartLogo.src} />
+
+          <Flex
+            borderLeft="1px solid"
+            borderColor="rgba(255, 255, 255, 0.4)"
+            flexDirection="column"
+            marginLeft="4"
+            paddingLeft="4"
+          >
+            <Text fontWeight="bold">Health & Fitness Kickstart</Text>
+            <Text>An 8 week program to kickstart your health journey.</Text>
+            <Link color="blue.500" href="/healthKickstart">
+              Read More & Get Involved
+            </Link>
+          </Flex>
+        </Flex>
+
         <Text>
           After years of exercising and dieting I have collected a few tips and tricks that make achieving your goals a little easier.
         </Text>
