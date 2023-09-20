@@ -1,7 +1,7 @@
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 
-import { Flex, Heading, Link, Text } from '@chakra-ui/react'
+import { Flex, Heading, Link, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
 
 import type { Recipe } from '@/pages/recipes'
 
@@ -26,7 +26,14 @@ const RecipeTile = (props: RecipeTileProps) => {
   const hasImage = !!mainImage?.url
 
   return (
-    <Flex as="article" borderBottomWidth="1px" marginBottom="8" paddingBottom="8">
+    <LinkBox
+      as="article"
+      borderBottomWidth="1px"
+      display="flex"
+      flexDirection={["column", "row"]}
+      marginBottom="8"
+      paddingBottom="8"
+    >
       <Flex
         aspectRatio={1}
         backgroundColor="#efefef"
@@ -34,14 +41,19 @@ const RecipeTile = (props: RecipeTileProps) => {
         flexShrink="0"
         overflow="hidden"
         position="relative"
-        width={200}
+        width={['100%', 200]}
       >
         {hasImage && (
           <NextImage alt={title} fill src={mainImage?.url} style={{ objectFit: 'cover' }} />
         )}
       </Flex>
 
-      <Flex flexDirection="column" justifyContent="center" marginLeft="8">
+      <Flex
+        flexDirection="column"
+        justifyContent="center"
+        marginLeft={[0, "8"]}
+        marginTop={["8", 0]}
+      >
         <Heading as="h2" noOfLines={2} size="md">
           {title}
         </Heading>
@@ -57,16 +69,16 @@ const RecipeTile = (props: RecipeTileProps) => {
           <Text marginLeft="1">{fat} Fat</Text>
         </Flex>
         
-        <Link
+        <LinkOverlay
           as={NextLink}
           fontWeight="bold"
           href={`/recipes/${sys.id}`}
           marginTop="4"
         >
           Read More
-        </Link>
+        </LinkOverlay>
       </Flex>
-    </Flex>
+    </LinkBox>
   )
 }
 

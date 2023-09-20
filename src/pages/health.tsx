@@ -40,17 +40,25 @@ const HealthPage = (props: HealthPageProps) => {
           border="1px solid"
           borderColor="gray.200"
           color="white"
+          direction={['column', 'row']}
           marginBottom="8"
           padding="4"
         >
-          <NextImage alt="8 Weeks, 8 Habits" width={160} height={100} src={KickstartLogo.src} />
+          <NextImage
+            alt="8 Weeks, 8 Habits"
+            width={160}
+            height={100}
+            src={KickstartLogo.src}
+          />
 
           <Flex
-            borderLeft="1px solid"
             borderColor="rgba(255, 255, 255, 0.4)"
+            borderLeft={['none', "1px solid"]}
+            borderTop={["1px solid", 'none']}
             flexDirection="column"
-            marginLeft="4"
-            paddingLeft="4"
+            marginLeft={[0, "4"]}
+            paddingLeft={[0, "4"]}
+            paddingTop={['4', 0]}
           >
             <Text fontWeight="bold">Health & Fitness Kickstart</Text>
             <Text>An 8 week program to kickstart your health journey.</Text>
@@ -267,36 +275,41 @@ const HealthPage = (props: HealthPageProps) => {
           A great way to increase your knowledge on health and fitness is to listen to podcasts. Here are a few of my favourites:
         </Text>
 
-        <iframe
-          style={{ borderRadius: 12 }}
-          src="https://open.spotify.com/embed/show/79CkJF3UJTHFV8Dse3Oy0P/video?utm_source=generator&theme=0"
-          width="50%"
-          height="152"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        />
+        <Flex width={['100%', '50%']}>
+          <iframe
+            style={{ borderRadius: 12 }}
+            src="https://open.spotify.com/embed/show/79CkJF3UJTHFV8Dse3Oy0P/video?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Flex>
 
-        <iframe
-          style={{ borderRadius: 12, marginTop: 8 }}
-          src="https://open.spotify.com/embed/show/63AWQmsSnFNFHUqnRAOFtD/video?utm_source=generator&theme=0"
-          width="50%"
-          height="152"
-          allowfullscreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        />
+        <Flex width={['100%', '50%']}>
+          <iframe
+            style={{ borderRadius: 12, marginTop: 8 }}
+            src="https://open.spotify.com/embed/show/63AWQmsSnFNFHUqnRAOFtD/video?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Flex>
         
-        <iframe
-          style={{ borderRadius: 12, marginTop: 8 }}
-          src="https://open.spotify.com/embed/show/5QjpaU0o1Q2MkVZwwG3y7d/video?utm_source=generator&theme=0"
-          width="50%"
-          height="152"
-          allowfullscreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        />
-
+        <Flex width={['100%', '50%']}>
+          <iframe
+            style={{ borderRadius: 12, marginTop: 8 }}
+            src="https://open.spotify.com/embed/show/5QjpaU0o1Q2MkVZwwG3y7d/video?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Flex>
 
         <Heading as="h3" fontSize="xl" marginTop="8">
           / Hot & Cold Exposure

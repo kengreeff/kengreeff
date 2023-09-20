@@ -106,7 +106,7 @@ function RecipePage(props: RecipeProps) {
           overflow="hidden"
           marginTop="8"
           position="relative"
-          width={600}
+          width={['100%', 600]}
         >
           {hasImage && (
             <NextImage alt={title} fill src={mainImage?.url} style={{ objectFit: 'cover' }} />

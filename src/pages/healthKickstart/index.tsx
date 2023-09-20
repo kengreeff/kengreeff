@@ -44,49 +44,47 @@ const HealthKickstart = () => {
 
         <Text marginTop="4"><strong>IMPORTANT:</strong> I am not a doctor or health professional. Please get your own advice and clearance before starting an exercise program.</Text>
 
+        <Heading as="h2" fontSize="3xl" marginTop="8">Protocol</Heading>
 
+        <Timeline boxProps={{ marginTop: '8' }}>
+          <Timeline.Entry label="6am" title="Wake up" />
 
-      <Heading as="h2" fontSize="3xl" marginTop="8">Protocol</Heading>
+          <Timeline.Entry label="6:15am" title="Sunlight in Eyes">
+            <Link href="https://hubermanlab.com/using-light-for-health/" color="blue.500">
+              Using Light for Health
+            </Link>
+          </Timeline.Entry>
 
-      <Timeline boxProps={{ marginTop: '8' }}>
-        <Timeline.Entry label="6am" title="Wake up" />
+          <Timeline.Entry label="7am" title="Exercise">
+            Mon, Tue, Wed, Fri and Sat. Try to move on your days off as well.
+          </Timeline.Entry>
 
-        <Timeline.Entry label="6:15am" title="Sunlight in Eyes">
-          <Link href="https://hubermanlab.com/using-light-for-health/" color="blue.500">
-            Using Light for Health
-          </Link>
-        </Timeline.Entry>
+          <Timeline.Entry label="8am" title="Cold Shower (1-2 min)">
+            Even on your days off. This is a great way to start the day.
+          </Timeline.Entry>
 
-        <Timeline.Entry label="7am" title="Exercise">
-          Mon, Tue, Wed, Fri and Sat. Try to move on your days off as well.
-        </Timeline.Entry>
+          <Timeline.Entry label="8:10am" title="Weigh In" />
 
-        <Timeline.Entry label="8am" title="Cold Shower (1-2 min)">
-          Even on your days off. This is a great way to start the day.
-        </Timeline.Entry>
+          <Timeline.Entry label="8:15am" title="Shred Shake" />
 
-        <Timeline.Entry label="8:10am" title="Weigh In" />
+          <Timeline.Entry label="10am" title="Snack" />
 
-        <Timeline.Entry label="8:15am" title="Shred Shake" />
+          <Timeline.Entry label="12pm" title="Lunch" />
 
-        <Timeline.Entry label="10am" title="Snack" />
+          <Timeline.Entry label="1:30pm" title="Exercise Snack">
+            Mon, Tue, Wed and Fri
+          </Timeline.Entry>
 
-        <Timeline.Entry label="12pm" title="Lunch" />
+          <Timeline.Entry label="5pm" title="Dinner" />
 
-        <Timeline.Entry label="1:30pm" title="Exercise Snack">
-          Mon, Tue, Wed and Fri
-        </Timeline.Entry>
+          <Timeline.Entry label="5:30pm" title="Snack" />
 
-        <Timeline.Entry label="5pm" title="Dinner" />
+          <Timeline.Entry label="7:45pm" title="Start Bedtime Routine" />
 
-        <Timeline.Entry label="5:30pm" title="Snack" />
-
-        <Timeline.Entry label="7:45pm" title="Start Bedtime Routine" />
-
-        <Timeline.Entry label="8:15pm" title="Bed">
-          Try minimize screen time before bed. Read a book or listen to a podcast instead.
-        </Timeline.Entry>
-      </Timeline>
+          <Timeline.Entry label="8:15pm" title="Bed">
+            Try minimize screen time before bed. Read a book or listen to a podcast instead.
+          </Timeline.Entry>
+        </Timeline>
 
         <Heading as="h2" fontSize="3xl" marginTop="8">Daily Plan</Heading>
 
