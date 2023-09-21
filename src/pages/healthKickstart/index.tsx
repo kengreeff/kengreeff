@@ -2,7 +2,9 @@ import {
   Flex,
   Heading,
   Link,
+  ListItem,
   Text,
+  UnorderedList,
 } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
 import NextLink from 'next/link'
@@ -13,7 +15,6 @@ import DefaultLayout from '@/layout/DefaultLayout'
 import Timeline from '@/components/Timeline'
 
 import HeaderImage from './assets/image.jpg'
-console.log(HeaderImage)
 
 const HealthKickstart = () => {
   return (
@@ -43,6 +44,19 @@ const HealthKickstart = () => {
         </Text>
 
         <Text marginTop="4"><strong>IMPORTANT:</strong> I am not a doctor or health professional. Please get your own advice and clearance before starting an exercise program.</Text>
+
+        <Heading as="h2" fontSize="3xl" marginTop="8">Habits</Heading>
+
+        <UnorderedList marginTop="4">
+          <ListItem>Sleep & Wake at Same Time Everyday</ListItem>
+          <ListItem>Morning Sunlight</ListItem>
+          <ListItem>Daily Weigh In</ListItem>
+          <ListItem>4-5 Exercise Days</ListItem>
+          <ListItem>Log all Meals</ListItem>
+          <ListItem>Favour Protein</ListItem>
+          <ListItem>3-4L Water Per Day</ListItem>
+          <ListItem>No Alcohol</ListItem>
+        </UnorderedList>
 
         <Heading as="h2" fontSize="3xl" marginTop="8">Protocol</Heading>
 

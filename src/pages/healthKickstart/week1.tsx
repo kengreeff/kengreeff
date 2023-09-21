@@ -1,4 +1,5 @@
 import {
+  Box,
   Flex,
   Link,
   Heading,
@@ -6,6 +7,7 @@ import {
 } from '@chakra-ui/react'
 import { NextSeo } from 'next-seo'
 import NextLink from 'next/link'
+import YouTubeEmbed from 'react-youtube'
 
 import DefaultLayout from '@/layout/DefaultLayout'
 
@@ -20,8 +22,12 @@ const HealthKickstartWeek1 = () => {
       />
 
       <Heading as="h1">Week 1 Plan</Heading>
+
+      <Box marginTop="8" width="100%">
+        <YouTubeEmbed videoId="NSpvlPJbPtE" />
+      </Box>
       
-      <Text marginTop="4">Today is the day! Let&apos;s strap in and commit, you won&apos;t recognise yourself after this.</Text>
+      <Text marginTop="8">Today is the day! Let&apos;s strap in and commit, you won&apos;t recognise yourself after this.</Text>
 
       <Text marginTop="4">This week is about finding your bearings. We will ease in to it slowly so that we can ensure we finish the race.</Text>
       
