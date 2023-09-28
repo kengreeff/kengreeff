@@ -8,12 +8,51 @@ import {
 import { NextSeo } from 'next-seo'
 import NextLink from 'next/link'
 import YouTubeEmbed from 'react-youtube'
+import { gql } from '@apollo/client'
 
 import DefaultLayout from '@/layout/DefaultLayout'
 
-import Timeline from '@/components/Timeline'
+import client from '@/utils/apollo-client'
 
-const HealthKickstartWeek1 = () => {
+import type { GetServerSidePropsContext } from 'next'
+
+export type HealthProgramDayPlan = {
+  displayTitle: string,
+  sys: {
+    id: string,
+  },
+  title: string,
+  weekDayNumber: number,
+  weekNumber: number,
+}
+
+const GET_DAY_PLANS_FOR_WEEK_QUERY = gql`
+  query GetDayPlansForWeekQuery {
+    healthProgramDayPlanCollection(where: { weekNumber: 1 }) {
+      items {
+        displayTitle
+        exercise
+        exerciseSnack
+        nutrition
+        sys {
+          id
+        }
+        title
+        weekDayNumber
+        weekNumber
+      }
+    }
+  }
+`
+
+type HealthKickstartWeek1Props = {
+  healthProgramDayPlans: HealthProgramDayPlan[],
+}
+
+const HealthKickstartWeek1 = (props: HealthKickstartWeek1Props) => {
+  const { healthProgramDayPlans } = props
+  console.log(healthProgramDayPlans)
+
   return (
     <DefaultLayout>
       <NextSeo
@@ -279,6 +318,18 @@ const HealthKickstartWeek1 = () => {
       {/* --- End Sunday --- */}
     </DefaultLayout>
   )
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { data } = await client.query({
+    query: GET_DAY_PLANS_FOR_WEEK_QUERY
+  })
+
+  return {
+    props: {
+      healthProgramDayPlans: data?.healthProgramDayPlanCollection?.items || [],
+    },
+  }
 }
 
 export default HealthKickstartWeek1

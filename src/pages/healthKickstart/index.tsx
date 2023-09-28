@@ -9,14 +9,66 @@ import {
 import { NextSeo } from 'next-seo'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
+import { gql } from '@apollo/client'
+
+import client from '@/utils/apollo-client'
 
 import DefaultLayout from '@/layout/DefaultLayout'
 
 import Timeline from '@/components/Timeline'
 
+import type { GetServerSidePropsContext } from 'next'
+
 import HeaderImage from './assets/image.jpg'
 
-const HealthKickstart = () => {
+export type HealthProgramDayPlan = {
+  displayTitle: string,
+  exercise: string,
+  exerciseSnack: string,
+  nutrition: string,
+  sys: {
+    id: string,
+  },
+  title: string,
+  weekDayNumber: number,
+}
+
+export type HealthProgramWeek = {
+  description: string,
+  linkedFrom: {
+    healthProgramDayPlanCollection: {
+      items: HealthProgramDayPlan[],
+    },
+  },
+  sys: {
+    id: string,
+  },
+  title: string,
+  youTubeVideoId: string,
+  weekNumber: number,
+}
+
+const GET_HEALTH_PROGRAM_WEEKS_QUERY = gql`
+  query GetHealthProgramWeeksQuery {
+    healthProgramWeekCollection(order: weekNumber_ASC) {
+      items {
+        title
+        sys {
+          id
+        }
+        weekNumber
+      }
+    }
+  }
+`
+
+type HealthKickStartPageProps = {
+  healthProgramWeeks: HealthProgramWeek[],
+}
+
+const HealthKickstartPage = (props: HealthKickStartPageProps) => {
+  const { healthProgramWeeks } = props
+
   return (
     <DefaultLayout>
       <NextSeo
@@ -85,7 +137,7 @@ const HealthKickstart = () => {
 
           <Timeline.Entry label="12pm" title="Lunch" />
 
-          <Timeline.Entry label="1:30pm" title="Exercise Snack">
+          <Timeline.Entry label="1:30pm" title="Exercise Snack (3 min)">
             Mon, Tue, Wed and Fri
           </Timeline.Entry>
 
@@ -103,14 +155,17 @@ const HealthKickstart = () => {
         <Heading as="h2" fontSize="3xl" marginTop="8">Daily Plan</Heading>
 
         <Flex flexDirection="column" marginTop="4">
-          <Link href="/healthKickstart/week1" color="blue.500">Week 1</Link>
-          <Link href="">Week 2 - Coming Soon</Link>
-          <Link href="">Week 3 - Coming Soon</Link>
-          <Link href="">Week 4 - Coming Soon</Link>
-          <Link href="">Week 5 - Coming Soon</Link>
-          <Link href="">Week 6 - Coming Soon</Link>
-          <Link href="">Week 7 - Coming Soon</Link>
-          <Link href="">Week 8 - Coming Soon</Link>
+          {healthProgramWeeks.map((week) => (
+            <Link
+              as={NextLink}
+              color="blue.500"
+              fontWeight="bold"
+              href={`/healthKickstart/week/${week.sys.id}`}
+              key={week.sys.id}
+            >
+              {week.title}
+            </Link>
+          ))}
         </Flex>
 
         <Heading as="h2" fontSize="3xl" marginTop="8">Resources</Heading>
@@ -124,4 +179,16 @@ const HealthKickstart = () => {
   )
 }
 
-export default HealthKickstart
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { data } = await client.query({
+    query: GET_HEALTH_PROGRAM_WEEKS_QUERY
+  })
+
+  return {
+    props: {
+      healthProgramWeeks: data?.healthProgramWeekCollection?.items || [],
+    },
+  }
+}
+
+export default HealthKickstartPage
