@@ -95,7 +95,10 @@ const HealthKickstartPage = (props: HealthKickStartPageProps) => {
           The sample workouts provided are aimed at beginners. If you have been training a while I suggest you grab a program from <Link href="https://www.hwpotraining.com/" color="blue.500"><strong>HWPO Training</strong></Link>
         </Text>
 
-        <Text marginTop="4"><strong>IMPORTANT:</strong> I am not a doctor or health professional. Please get your own advice and clearance before starting an exercise program.</Text>
+        <Text marginTop="4">
+          <strong>IMPORTANT:</strong> I am not a doctor or health professional.
+          By taking part you acknowledge and agree to the <Link href="/healthKickstart/liabilityWaiver" color="blue.500" fontWeight="bold">Exercise Program Liability Acknowledgment</Link>. Please get your own advice and clearance before starting an exercise program.
+        </Text>
 
         <Heading as="h2" fontSize="3xl" marginTop="8">Habits</Heading>
 
