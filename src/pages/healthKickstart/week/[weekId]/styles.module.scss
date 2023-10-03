@@ -1,3 +1,8 @@
 .markdown {
     white-space: pre-wrap;
+
+    a {
+        color: var(--chakra-colors-blue-500);
+        font-weight: bold;
+    }
 }
