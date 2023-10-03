@@ -58,7 +58,6 @@ type RecipesPageProps = {
 
 const RecipesPage = (props: RecipesPageProps) => {
   const { recipes } = props
-  console.log(recipes)
 
   return (
     <DefaultLayout>

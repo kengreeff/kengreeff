@@ -55,7 +55,6 @@ type HealthKickstartWeekProps = {
 
 const HealthKickstartWeek = (props: HealthKickstartWeekProps) => {
   const { healthProgramWeek } = props
-  console.log(healthProgramWeek)
 
   return (
     <DefaultLayout>

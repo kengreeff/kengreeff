@@ -14,7 +14,6 @@ import NextImage from 'next/image'
 import DefaultLayout from '@/layout/DefaultLayout'
 
 import KickstartLogo from 'public/kickstart-logo.png'
-console.log(KickstartLogo)
 
 type HealthPageProps = {
   children: React.ReactNode,
