@@ -16,7 +16,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
   const { asPath } = useRouter()
   
   return (
-    <Flex>
+    <Flex minHeight="100vh">
       <DefaultSeo
         title="Ken Greeff | Software Engineer"
         description="Building production software applications and a healthy lifestyle."

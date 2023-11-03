@@ -12,6 +12,8 @@ import client from '@/utils/apollo-client'
 
 import DefaultLayout from '@/layout/DefaultLayout'
 
+import styles from './styles.module.scss'
+
 type BlogPost = {
   content: string,
   mainImage: {
@@ -80,8 +82,11 @@ function PostPage(props: PostProps) {
       <Heading>{title}</Heading>
 
       {!!youtubeVideoId && (
-        <Box marginTop="8" width="100%">
-          <YouTubeEmbed videoId={youtubeVideoId} />
+        <Box aspectRatio={16/9} marginTop="8" position="relative" width={['100%', '50%']}>
+          <YouTubeEmbed
+            iframeClassName={styles.youtube}
+            videoId={youtubeVideoId}
+          />
         </Box>
       )}
 
