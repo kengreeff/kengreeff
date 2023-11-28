@@ -1,6 +1,6 @@
 import NextImage from 'next/image'
 import NextLink from 'next/link'
-import { Flex, GridItem, Heading, Link, Text } from '@chakra-ui/react'
+import { Flex, GridItem, Heading, Link, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
 
 import type { BlogPost } from '@/pages'
 
@@ -12,7 +12,8 @@ const BlogPostTile = (props: BlogPostTileProps) => {
   const { blogPost: { mainImage, summary, sys, title } } = props
 
   return (
-    <GridItem
+    <LinkBox
+      as={GridItem}
       position="relative"
       overflow="clip"
       width="100%"
@@ -49,16 +50,16 @@ const BlogPostTile = (props: BlogPostTileProps) => {
           {summary}
         </Text>
         
-        <Link
+        <LinkOverlay
           as={NextLink}
           fontWeight="bold"
           href={`/posts/${sys.id}`}
           marginTop="auto"
         >
           Read More
-        </Link>
+        </LinkOverlay>
       </Flex>
-    </GridItem>
+    </LinkBox>
   )
 }
 

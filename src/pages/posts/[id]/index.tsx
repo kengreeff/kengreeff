@@ -1,9 +1,10 @@
 import { gql } from '@apollo/client'
-import { Box, Heading } from '@chakra-ui/react'
+import { Box, Heading, Link } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import YouTubeEmbed from 'react-youtube'
+import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
 
 import type { GetServerSidePropsContext } from 'next'
@@ -114,6 +115,12 @@ function PostPage(props: PostProps) {
         >
           {content}
         </ReactMarkdown>
+      </Box>
+
+      <Box marginTop="8">
+        <Link as={NextLink} href="/posts" fontWeight="bold">
+          View More Posts
+        </Link>
       </Box>
     </DefaultLayout>
   )
