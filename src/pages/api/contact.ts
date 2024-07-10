@@ -23,10 +23,10 @@ const handler = async (
   // Send Email
   try {
     await sendgrid.send({
-      to: process.env.SENDGRID_EMAIL,
+      to: process.env.SENDGRID_TO_EMAIL,
       from: {
         name: 'Website Enquiries',
-        email: process.env.SENDGRID_EMAIL || '',
+        email: process.env.SENDGRID_FROM_EMAIL || '',
       },
       replyTo: {
         name,
