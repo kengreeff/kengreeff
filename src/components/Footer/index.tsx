@@ -17,8 +17,8 @@ const Footer = () => {
             Portfolio built using the open source project by
           </Text>
 
-          <Link fontWeight="bold" href="https://www.kengreeff.com" marginLeft="1">
-            Ken Greeff
+          <Link fontWeight="bold" href="https://www.initium.studio" marginLeft="1">
+            Initium Studio
           </Link>
         </Flex>
 
