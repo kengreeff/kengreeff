@@ -66,11 +66,11 @@ export default function Home(props: HomeProps) {
           paddingBottom="12"
         >
           <Heading letterSpacing="-3px" size="4xl">Ken Greeff</Heading>
-          <Heading marginTop="2" size="lg">Software Engineer, Sydney Australia</Heading>
+          <Heading marginTop="2" size="lg">Software Engineer, Australia</Heading>
 
           <Text marginTop="8" width={['100%', "70%"]}>
             I'm a software engineer and entrepreneur with a passion for building great software products and promoting a healthy lifestyle. 
-            I founded Realhub, a software company that helps real estate agents manage their business more efficiently, and currently work as a software engineer at Domain Group, a leading Australian real estate website. 
+            I was a co-founder of Realbase, a software company that helps real estate agents manage their business more efficiently which we sold in 2022 for $180M. I'm currently building a content planning tool for YouTubers called Clipflow. 
             When I'm not building software, you can find me in the gym or outdoors, as fitness is a huge part of my life and something that I'm truly passionate about.
           </Text>
         </Flex>

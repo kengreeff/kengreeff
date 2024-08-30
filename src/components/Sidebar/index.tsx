@@ -30,6 +30,12 @@ const Sidebar = () => {
             Blog
           </NextLink>
         </ListItem>
+
+        <ListItem borderBottom="1px solid" borderColor="gray.700">
+          <NextLink href="/podcast">
+            Podcast
+          </NextLink>
+        </ListItem>
         
         <ListItem borderBottom="1px solid" borderColor="gray.700">
           <NextLink href="/projects">

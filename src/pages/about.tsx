@@ -28,9 +28,11 @@ const AboutPage = (props: AboutPageProps) => {
 
         <Text marginTop="4">In 2020, Realhub merged with our biggest competitor, Campaigntrack, to form Realbase that dominated the real estate marketing industry in Australia & New Zealand with close to 50% of the market share. I worked as the CTO managing multiple team members. We developed conventions and systems that allowed us to build software platforms extremely quickly. In 2022, Realbase was acquired by Domain Holdings as part of their Agent Solutions offering.</Text>
 
-        <Text marginTop="4">Currently, I work at Domain, where I continue to develop and improve the Realbase platforms, including Realhub, Engage, and many utility platforms like our Artwork Builder and Template Management systems.</Text>
+        <Text marginTop="4">From 2022 - 2024, I worked at Domain, where I continued to develop and improve the Realbase platforms, including Realhub, Engage, and many utility platforms like the Artwork Builder and Template Management systems.</Text>
         
-        <Text>I have also started to live stream the development of my side projects to educate other developers and showcase how to build production-ready applications.</Text>
+        <Text marginTop="4">I am currently working on Clipflow, a content planning tool for YouTubers.</Text>
+        
+        <Text marginTop="4">I have also started to live stream the development of my side projects to educate other developers and showcase how to build production-ready applications.</Text>
 
         <Text marginTop="4">Alongside my passion for development, I am also a health enthusiast. I have been exercising in the gym since I was 15, mainly focusing on bodybuilding. However, in 2014 I started crossfit and found a new way to train. I continue to train with my wife 5-6 times a week and spend hundreds of hours listening to podcasts on ways to optimize health and performance.</Text>
       </Flex>
