@@ -16,7 +16,10 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['images.ctfassets.net'],
+    domains: [
+      'images.ctfassets.net',
+      'd3t3ozftmdmh3i.cloudfront.net',
+    ],
   },
   reactStrictMode: true,
   typescript: {
