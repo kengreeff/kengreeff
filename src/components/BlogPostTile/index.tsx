@@ -19,9 +19,9 @@ const BlogPostTile = (props: BlogPostTileProps) => {
       width="100%"
     >
       <Flex
+        aspectRatio={16/9}
         borderTopLeftRadius="5px"
         borderTopRightRadius="5px"
-        height="220px"
         overflow="clip"
         position="relative"
       >
