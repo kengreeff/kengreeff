@@ -69,8 +69,9 @@ export default function Home(props: HomeProps) {
           <Heading marginTop="2" size="lg">Software Engineer, Australia</Heading>
 
           <Text marginTop="8" width={['100%', "70%"]}>
-            I'm a software engineer and entrepreneur with a passion for building great software products and promoting a healthy lifestyle. 
-            I was a co-founder of Realbase, a software company that helps real estate agents manage their business more efficiently which we sold in 2022 for $180M. I'm currently building a content planning tool for YouTubers called Clipflow. 
+            I'm a software engineer and entrepreneur with a passion for building great software products. 
+            I was a co-founder of Realbase, a software company that helps real estate agents manage their business more efficiently which we sold in 2022 for $180M.
+            I'm currently building Clipflow a purpose-built tool for planning &amp; creating content with your team.
             When I'm not building software, you can find me in the gym or outdoors, as fitness is a huge part of my life and something that I'm truly passionate about.
           </Text>
         </Flex>
